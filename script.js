@@ -143,48 +143,7 @@ function applyTheme(theme) {
     body.classList.add(`theme-${theme}`);
 }
 
-// FEATURE 3: Interactive Image Gallery with Modal 
-function initImageGallery() {
-    const galleryImages = document.querySelectorAll('.gallery-image');
-    if (galleryImages.length === 0) return;
-
-    // Create modal structure
-    const modal = document.createElement('div');
-    modal.className = 'image-modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <img class="modal-image" src="" alt="">
-            <p class="modal-caption"></p>
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    const modalImage = modal.querySelector('.modal-image');
-    const modalCaption = modal.querySelector('.modal-caption');
-    const closeBtn = modal.querySelector('.modal-close');
-
-    galleryImages.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', function() {
-            modal.style.display = 'flex';
-            modalImage.src = this.src;
-            modalCaption.textContent = this.alt;
-        });
-    });
-
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-}
-
-// FEATURE 4: Form Validation and Enhancement 
+// FEATURE 3: Form Validation and Enhancement 
 function initFormValidation() {
     const form = document.querySelector('.comment-form form');
     if (!form) return;
@@ -267,7 +226,7 @@ function initFormValidation() {
     });
 }
 
-// FEATURE 5: Interactive Character Comparison on Top 5 Page 
+// FEATURE 4: Interactive Character Comparison on Top 5 Page 
 function initCharacterComparison() {
     const comparisonContainer = document.getElementById('character-comparison');
     if (!comparisonContainer) return;
@@ -410,7 +369,7 @@ function initCharacterComparison() {
     char2Select.addEventListener('change', updateComparison);
 }
 
-// FEATURE 6: Scroll to Top Button 
+// FEATURE 5: Scroll to Top Button 
 function initScrollToTop() {
     const scrollBtn = document.createElement('button');
     scrollBtn.id = 'scroll-to-top';
