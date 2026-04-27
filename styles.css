@@ -324,3 +324,194 @@ footer p {
 section {
     animation: fadeIn 0.6s ease-in;
 }
+
+#character-quiz {
+    background-color: rgba(210, 105, 30, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    border: 2px solid #8B4513;
+}
+ 
+.quiz-question h4 {
+    color: #8B4513;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+ 
+.question-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+ 
+.quiz-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+.quiz-answer-btn {
+    background-color: #8B4513;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+ 
+.quiz-answer-btn:hover {
+    background-color: #D2691E;
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ 
+.quiz-result {
+    text-align: center;
+    padding: 30px;
+}
+ 
+.quiz-result h3 {
+    color: #8B4513;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+ 
+.quiz-result p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+ 
+.quiz-restart-btn {
+    background-color: #D2691E;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ 
+.quiz-restart-btn:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+}
+
+.theme-switcher-container {
+    background-color: rgba(210, 105, 30, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+ 
+.theme-switcher-container label {
+    font-weight: bold;
+    color: #8B4513;
+    margin-right: 10px;
+}
+ 
+#theme-switcher {
+    padding: 8px 15px;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+body.theme-dark {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2511 50%, #6B3410 100%);
+}
+ 
+body.theme-dark section {
+    background-color: rgba(40, 40, 40, 0.95);
+    color: #E0E0E0;
+}
+ 
+body.theme-dark h2,
+body.theme-dark h3 {
+    color: #D2691E;
+}
+ 
+body.theme-hockey {
+    background: linear-gradient(135deg, #003087 0%, #C8102E 50%, #FFFFFF 100%);
+}
+ 
+body.theme-hockey header {
+    background-color: rgba(0, 48, 135, 0.95);
+}
+ 
+body.theme-hockey nav {
+    background-color: rgba(200, 16, 46, 0.9);
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+ 
+.form-error {
+    background-color: #ffebee;
+    border-left: 4px solid #c62828;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+ 
+.form-error p {
+    color: #c62828;
+    margin: 0;
+}
+ 
+.form-success {
+    background-color: #e8f5e9;
+    border-left: 4px solid #2e7d32;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+ 
+.form-success p {
+    color: #2e7d32;
+    margin: 0;
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+ 
+#scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+ 
+#scroll-to-top:hover {
+    background-color: #D2691E;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
