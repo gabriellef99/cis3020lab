@@ -116,12 +116,12 @@ function initCharacterQuiz() {
 
 // FEATURE 2: Dynamic Theme Switcher
 function initThemeSwitcher() {
-    const themeSwitcher = document.getElementById('theme-switcher');
-    if (!themeSwitcher) return;
- 
-    // Check for saved theme preference
+    // Always apply saved theme on page load (even if switcher isn't on this page)
     const savedTheme = localStorage.getItem('letterkenny-theme') || 'default';
     applyTheme(savedTheme);
+    
+    const themeSwitcher = document.getElementById('theme-switcher');
+    if (!themeSwitcher) return; // Exit if no switcher on this page, but theme is still applied
  
     themeSwitcher.addEventListener('change', function() {
         const selectedTheme = this.value;
@@ -376,7 +376,7 @@ function initScrollToTop() {
     scrollBtn.innerHTML = '↑';
     scrollBtn.title = 'Back to Top';
     document.body.appendChild(scrollBtn);
-
+ 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             scrollBtn.classList.add('visible');
@@ -384,7 +384,7 @@ function initScrollToTop() {
             scrollBtn.classList.remove('visible');
         }
     });
-
+ 
     scrollBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeSwitcher();
     initImageGallery();
     initFormValidation();
-    initCharacterFilter();
+    initCharacterComparison();
     initScrollToTop();
     
     console.log('Letterkenny Fan Page JavaScript loaded successfully!');
