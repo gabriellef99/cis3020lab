@@ -711,6 +711,7 @@ body.theme-hockey nav {
 #scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
+    pointer-event: auto;
 }
  
 #scroll-to-top:hover {
