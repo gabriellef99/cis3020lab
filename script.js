@@ -114,7 +114,36 @@ function initCharacterQuiz() {
     displayQuestion();
 }
 
-// FEATURE 2: Form Validation and Enhancement 
+// FEATURE 2: Dynamic Theme Switcher
+function initThemeSwitcher() {
+    const themeSwitcher = document.getElementById('theme-switcher');
+    if (!themeSwitcher) return;
+ 
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('letterkenny-theme') || 'default';
+    applyTheme(savedTheme);
+ 
+    themeSwitcher.addEventListener('change', function() {
+        const selectedTheme = this.value;
+        applyTheme(selectedTheme);
+        localStorage.setItem('letterkenny-theme', selectedTheme);
+    });
+ 
+    // Set the select to the saved theme
+    themeSwitcher.value = savedTheme;
+}
+ 
+function applyTheme(theme) {
+    const body = document.body;
+    
+    // Remove all theme classes
+    body.classList.remove('theme-default', 'theme-dark', 'theme-hockey');
+    
+    // Add selected theme class
+    body.classList.add(`theme-${theme}`);
+}
+
+// FEATURE 3: Form Validation and Enhancement 
 function initFormValidation() {
     const form = document.querySelector('.comment-form form');
     if (!form) return;
@@ -197,7 +226,7 @@ function initFormValidation() {
     });
 }
 
-// FEATURE 3: Interactive Character Comparison on Top 5 Page 
+// FEATURE 4: Interactive Character Comparison on Top 5 Page 
 function initCharacterComparison() {
     const comparisonContainer = document.getElementById('character-comparison');
     if (!comparisonContainer) return;
@@ -340,7 +369,7 @@ function initCharacterComparison() {
     char2Select.addEventListener('change', updateComparison);
 }
 
-// FEATURE 4: Scroll to Top Button 
+// FEATURE 5: Scroll to Top Button 
 function initScrollToTop() {
     const scrollBtn = document.createElement('button');
     scrollBtn.id = 'scroll-to-top';
